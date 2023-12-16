@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hava Durumu Sonuç</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            background-color: #2c3e50; /* Koyu arka plan rengi */
+            color: #ecf0f1; /* Metin rengi */
+        }
+
+        .container {
+            text-align: center;
+            background-color: rgba(44, 62, 80, 0.9); /* Koyu arka plan rengi */
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            max-width: 500px;
+            width: 90%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        h2, p {
+            margin: 0;
+        }
+
+        h2 {
+            color: #3498db; /* Başlık rengi */
+            margin-bottom: 20px;
+        }
+
+        p {
+            color: #ecf0f1; /* Metin rengi */
+            margin-bottom: 15px;
+        }
+
+        a {
+            color: #3498db; /* Link rengi */
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #2980b9; /* Hover'da link rengi */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        {% if result %}
+            <h2>{{ request.form['city'].upper() }} Şehrinde Hava Durumu:</h2>
+            <p>Açıklama: {{ result['description'] }}</p>
+            <p>Sıcaklık: {{ result['temperature'] }} °C</p>
+        {% else %}
+            <p>Şehir bulunamadı.</p>
+        {% endif %}
+        <a href="/">Geri Dön</a>
+    </div>
+</body>
+</html>

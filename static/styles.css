@@ -1,0 +1,122 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    animation: changeBackground 17s infinite linear;
+    filter: brightness(80%);
+}
+
+.container {
+    background-size: cover;
+    background-position: center -290px;
+    background-color: rgba(1, 0, 0, 0.9);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(204, 0, 0, 0.2);
+    max-width: 90%;
+    width: 500px;
+    position: relative;
+    overflow: hidden;
+    opacity: 0.7;
+    margin: 20px auto;
+    color: white; /* Yazı rengi */
+    text-align: center;
+    .logo {
+        background-image: url('/static/logoyeni.png'); /* Yeni logo yolunu belirtin */
+        background-repeat: no-repeat; /* Tekrar etmeyi önle */
+        background-size: contain; /* Oranları koruyarak içerisine sığdır */
+        max-width: 100%; /* Maksimum genişlik ayarı */
+        height: 200px; /* Yüksekliği belirli bir değere sabitleyin, oranları koruyun */
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    form {
+        /* Diğer stiller */
+        margin-top: 20px; /* Input alanını biraz yukarı taşı */
+    }
+}
+
+.logo {
+    background-image: url('/static/logoyeni.png');
+    background-size: contain;
+    height: 80px; /* Logo yüksekliği */
+    width: 100%; /* Logo genişliği */
+    margin-bottom: 20px;
+    display: block; /* Logo'nun bir blok olarak görünmesini sağlar */
+    margin-left: auto; /* Logo'yu sağa hizalar */
+    margin-right: auto; /* Logo'yu sola hizalar */
+    background-position: center; /* Logo'nun ortalanması */
+}
+
+h1 {
+    color: #3498db;
+    margin-bottom: 20px;
+    opacity: 0%;
+    font-size: 24px; /* Başlık font büyüklüğü */
+}
+
+form {
+    margin: 20px auto;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+input {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    opacity: 1;
+}
+
+button {
+    background-color: #00000000;
+    color: white;
+    padding: 12px 40px;
+    border: 1px solid #dedfdf;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background-color: #e2e8ec;
+    color: #160b0b;
+    border-color: #080303;
+}
+
+@keyframes changeBackground {
+    0%, 100% {
+        background-image: url('/static/clear.jpg');
+    }
+    25% {
+        background-image: url('/static/clouds.jpg');
+    }
+    50% {
+        background-image: url('/static/rain.jpg');
+    }
+    75% {
+        background-image: url('/static/snow.jpg');
+    }
+}
